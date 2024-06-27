@@ -1,0 +1,269 @@
+<style type="text/css">
+	body,html,.body,.container{
+		padding: 0;
+		margin: 0;
+		background: whitesmoke;
+	}
+
+	.container{
+		width: 100%;
+		height: 100%;
+		display: flex;
+		vertical-align: middle;
+		align-items: center;
+		justify-content: center;
+	}
+	.contBox{
+		position: relative;
+		padding: 70px;
+		display: block;
+		background: white;
+		border-radius: 5px;
+		clip-path : polygon(0% 0%,100% 0%,100% 95%,55% 95%,50% 100%,50% 100%,45% 95%,0% 95%);
+		box-shadow: 0 0 10px 0 #5553;
+	}
+	.contBox > .clipBox{
+		position: relative;
+		width: 450px;
+		height: 450px;
+		border:1px solid #5555;
+	}
+	#ImageBox{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		border:1px solid #f5f7f8;
+		background: url(../../images/b.jpg)center no-repeat;
+		background-size: cover;
+	}
+	.controlEntety{
+		position: absolute;
+		z-index: 2;
+		height: 20px;
+		width: 20px;
+		border-radius: 100px;
+		left:-8px;
+		top:-8px;
+		border:none;
+		outline: none;
+		box-sizing: border-box;
+	}
+
+	.controlEntety:nth-child(0){background:#bd6c48 ;color: #bd6c48}
+	.controlEntety:nth-child(1){background:#54ac68 ;color: #54ac68}
+	.controlEntety:nth-child(2){background:#feb308 ;color: #feb308}
+	.controlEntety:nth-child(3){background:#9b5fc0 ;color: #9b5fc0}
+	.controlEntety:nth-child(4){background:#02d8e9 ;color: #02d8e9}
+	.controlEntety:nth-child(5){background:#12e193 ;color: #12e193}
+	.controlEntety:nth-child(6){background:#4b5d16 ;color: #4b5d16}
+	.controlEntety:nth-child(7){background:#87a922 ;color: #87a922}
+	.controlEntety:nth-child(8){background:#1d5dec ;color: #1d5dec}
+	.controlEntety:nth-child(9){background:#ffb7ce ;color: #ffb7ce}
+	.controlEntety:nth-child(10){background:#ab9004 ;color: #ab9004}
+	.controlEntety:nth-child(11){background:#b6c406 ;color: #b6c406}
+	.controlEntety:nth-child(12){background:#ca9bf7 ;color: #ca9bf7}
+	.controlEntety:nth-child(13){background:#fe46a5 ;color: #fe46a5}
+	.controlEntety:nth-child(14){background:#ac1db8 ;color: #ac1db8}
+	.controlEntety:nth-child(15){background:#a00498 ;color: #a00498}
+	.controlEntety:nth-child(16){background:#6b7c85 ;color: #6b7c85}
+	.controlEntety:nth-child(17){background:#990f4b ;color: #990f4b}
+	.controlEntety:nth-child(18){background:#afa88b ;color: #afa88b}
+	.controlEntety:nth-child(19){background:#770001 ;color: #770001}
+	.controlEntety:nth-child(20){background:#fe4b03 ;color: #fe4b03}
+	.controlEntety:nth-child(21){background:#464196 ;color: #464196}
+	.controlEntety:nth-child(22){background:#533cc6 ;color: #533cc6}
+	.controlEntety:nth-child(23){background:#10a674 ;color: #10a674}
+	.controlEntety:nth-child(24){background:#f29e8e ;color: #f29e8e}
+	.controlEntety:nth-child(25){background:#044a05 ;color: #044a05}
+	.controlEntety:nth-child(26){background:#c14a09 ;color: #c14a09}
+	.controlEntety:nth-child(27){background:#41fdfe ;color: #41fdfe}
+	.controlEntety:nth-child(28){background:#65fe08 ;color: #65fe08}
+	.controlEntety:nth-child(29){background:#ff5b00 ;color: #ff5b00}
+	.controlEntety:nth-child(30){background:#fffd01 ;color: #fffd01}
+	.controlEntety:nth-child(31){background:#76424e ;color: #76424e}
+	.controlEntety:nth-child(32){background:#cb7723 ;color: #cb7723}
+	.controlEntety:nth-child(33){background:#6f6c0a ;color: #6f6c0a}
+	.controlEntety:nth-child(34){background:#7e4071 ;color: #7e4071}
+	.controlEntety:nth-child(35){background:#fdb147 ;color: #fdb147}
+	.controlEntety:nth-child(36){background:#030aa7 ;color: #030aa7}
+	.controlEntety:nth-child(37){background:#20f986 ;color: #20f986}
+	.controlEntety:nth-child(38){background:teal ;color: teal}
+	.controlEntety:nth-child(39){background:orange ;color: orange}
+	.controlEntety:nth-child(40){background:blue ;color: blue}
+	.controlEntety:nth-child(41){background:red ;color: red}
+
+	.controlEntety.active{
+		border:2px solid;
+		background: transparent;
+	}
+
+
+	.clipPathText > span > label:nth-child(0){color: #bd6c48}
+	.clipPathText > span > label:nth-child(1){color: #54ac68}
+	.clipPathText > span > label:nth-child(2){color: #feb308}
+	.clipPathText > span > label:nth-child(3){color: #9b5fc0}
+	.clipPathText > span > label:nth-child(4){color: #02d8e9}
+	.clipPathText > span > label:nth-child(5){color: #12e193}
+	.clipPathText > span > label:nth-child(6){color: #4b5d16}
+	.clipPathText > span > label:nth-child(7){color: #87a922}
+	.clipPathText > span > label:nth-child(8){color: #1d5dec}
+	.clipPathText > span > label:nth-child(9){color: #ffb7ce}
+	.clipPathText > span > label:nth-child(10){color: #ab9004}
+	.clipPathText > span > label:nth-child(11){color: #b6c406}
+	.clipPathText > span > label:nth-child(12){color: #ca9bf7}
+	.clipPathText > span > label:nth-child(13){color: #fe46a5}
+	.clipPathText > span > label:nth-child(14){color: #ac1db8}
+	.clipPathText > span > label:nth-child(15){color: #a00498}
+	.clipPathText > span > label:nth-child(16){color: #6b7c85}
+	.clipPathText > span > label:nth-child(17){color: #990f4b}
+	.clipPathText > span > label:nth-child(18){color: #afa88b}
+	.clipPathText > span > label:nth-child(19){color: #770001}
+	.clipPathText > span > label:nth-child(20){color: #fe4b03}
+	.clipPathText > span > label:nth-child(21){color: #464196}
+	.clipPathText > span > label:nth-child(22){color: #533cc6}
+	.clipPathText > span > label:nth-child(23){color: #10a674}
+	.clipPathText > span > label:nth-child(24){color: #f29e8e}
+	.clipPathText > span > label:nth-child(25){color: #044a05}
+	.clipPathText > span > label:nth-child(26){color: #c14a09}
+	.clipPathText > span > label:nth-child(27){color: #41fdfe}
+	.clipPathText > span > label:nth-child(28){color: #65fe08}
+	.clipPathText > span > label:nth-child(29){color: #ff5b00}
+	.clipPathText > span > label:nth-child(30){color: #fffd01}
+	.clipPathText > span > label:nth-child(31){color: #76424e}
+	.clipPathText > span > label:nth-child(32){color: #cb7723}
+	.clipPathText > span > label:nth-child(33){color: #6f6c0a}
+	.clipPathText > span > label:nth-child(34){color: #7e4071}
+	.clipPathText > span > label:nth-child(35){color: #fdb147}
+	.clipPathText > span > label:nth-child(36){color: #030aa7}
+	.clipPathText > span > label:nth-child(37){color: #20f986}
+	.clipPathText > span > label:nth-child(38){color: teal}
+	.clipPathText > span > label:nth-child(39){color: orange}
+	.clipPathText > span > label:nth-child(40){color: blue}
+	.clipPathText > span > label:nth-child(41){color: red}
+
+	.clipPathText{
+		position: relative;
+		width: 100%;
+		display: block;
+		font-size: 15px;
+		font-weight: bold;
+		font-family: open sans,sans-serif;
+		text-align: center;
+		padding: 10px;
+	}
+	.clipPathText > label{
+		color: #f88;
+	}
+
+
+</style>
+
+<div class="body">
+
+	<div class="clipPathText"><label>Clip-path : </label><span id="allPaths"></span></div>
+	<div class="container">
+		<div class="contBox">
+			<div class="clipBox" id="clipBox">
+				<div id="ImageBox"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	const clipBox=document.querySelector("#clipBox");
+	let num=prompt("How many Entities ..?");
+	if(num>=3)
+		makeController(num);
+	else
+		alert("Entities must requires more than 3");
+
+
+	function makeController(int){
+		for(let i=0;i<int;i++){
+			let div=document.createElement("div");
+				div.className="controlEntety";
+				dragElement(div);
+			clipBox.appendChild(div);
+
+		}
+	}
+
+
+
+
+	function dragElement(elmnt) {
+	  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+	    
+	  elmnt.onmousedown = dragMouseDown;
+
+	  function dragMouseDown(e) {
+	    e = e || window.event;
+	    e.preventDefault();
+	    // get the mouse cursor position at startup:
+	    pos3 = e.clientX;
+	    pos4 = e.clientY;
+	    clipBox.onmouseup = closeDragElement;
+	    // call a function whenever the cursor moves:
+	    clipBox.onmousemove = elementDrag;
+	    /* for the mobile touch moving */
+	    clipBox.ontouchmove = elementDrag;
+	    elmnt.classList.add("active");
+
+	  }
+
+	  //console.log(clipBox.offsetHeight,clipBox.offsetWidth);
+	  function elementDrag(e) {
+	    e = e || window.event;
+	    e.preventDefault();
+	    // calculate the new cursor position:
+	    pos1 = pos3 - e.clientX;
+	    pos2 = pos4 - e.clientY;
+	    let top=(elmnt.offsetTop - pos2);
+	    let left=(elmnt.offsetLeft - pos1);
+	    if( (top>=-10 && top<=eval(clipBox.offsetHeight-10)) && (left>=-10 && left<=eval(clipBox.offsetWidth-10))){
+	    	//console.log(clipBox.offsetHeight,clipBox.offsetWidth);
+	    	//console.log(top,left);
+		    // set the element's new position:
+
+		    pos3 = e.clientX;
+		    pos4 = e.clientY;
+
+		    elmnt.style.top = top + "px";
+		    elmnt.style.left = left + "px";
+
+		    makePath();
+		}
+	  }
+
+	  function closeDragElement() {
+	  let lists=document.querySelectorAll(".controlEntety");
+	    /* stop moving when mouse button is released:*/
+	    clipBox.onmouseup = null;
+	    clipBox.onmousemove = null;
+	    lists.forEach(me=>{me.classList.remove("active")});
+	  }
+
+	  function makePath(){
+	  	let pathStr="",pathGetting="";
+	  	let count=0;
+	  	let lists=document.querySelectorAll(".controlEntety");
+	  		lists.forEach(me=>{
+	  			let style=getComputedStyle(me);
+	  			let top=eval(eval(eval(parseInt(style.top)+10)/clipBox.offsetHeight)*100).toFixed(0);
+	  			let left=eval(eval(eval(parseInt(style.left)+10)/clipBox.offsetWidth)*100).toFixed(0);
+	  			if(count==0){
+	  				pathStr+=""+left+"% "+top+"%";
+	  				pathGetting+="<label>"+left+"% "+top+"%</label>";
+	  			}else{
+	  				pathStr+=","+left+"% "+top+"%";
+	  				pathGetting+="<label>,"+left+"% "+top+"%</label>";
+	  			}
+	  			
+	  			count++;
+	  		})
+	  	document.getElementById('ImageBox').style.clipPath="polygon("+pathStr+")";
+	  	document.getElementById('allPaths').innerHTML="polygon("+pathGetting+")";
+	  }
+	}
+</script>
